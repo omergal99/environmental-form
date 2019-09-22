@@ -1,0 +1,91 @@
+.form-levels {
+  .section {
+    padding: 0 3.4rem 1.5rem;
+    position: relative;
+    background-color: white;
+    margin-bottom: 6px;
+    &:before {
+      @include pseudo;
+      box-shadow: 0px 0px 30px 0px #bdccdc;
+      height: 100%;
+      left: 0;
+      width: 100%;
+      z-index: -20;
+    }
+    h3 {
+      font-size: 1.5rem;
+      font-family: Assistant-light, Arial, Helvetica, sans-serif;
+      color: $clr1;
+      text-align: right;
+      margin: 0;
+      padding: 14px 0;
+    }
+    .form-type-base {
+      position: relative;
+      padding: 0 0 1rem;
+      font-size: 1.125rem;
+      font-family: Assistant-light, Arial, Helvetica, sans-serif;
+      .base-input {
+        margin: 4px 0 0;
+        width: 100%;
+        padding: 8px 10px;
+        height: 38px;
+        font-size: 1.125rem;
+        border: 1px solid $clr1;
+        &::placeholder {
+          font-size: 1.125rem;
+        }
+      }
+    }
+
+    .drop-down-select,
+    .form-type-quantity,
+    .form-type-drop-down {
+      width: 380px;
+      .demo-select {
+        position: relative;
+        width: 100%;
+        height: 38px;
+        margin: 4px 0 0;
+        border: 1px solid $clr1;
+        font-size: 1.125rem;
+        padding: 6px 12px;
+        text-align: right;
+        img {
+          transition: transform 0.4s;
+          transform: rotate(0deg);
+          &.rotate180 {
+            transform: rotate(540deg);
+          }
+        }
+      }
+      .demo-options {
+        position: absolute;
+        top: calc(100% - 10px);
+        width: 380px;
+        left: 0;
+        text-align: right;
+        color: rgb(73, 86, 102);
+        font-family: Assistant, Arial, Helvetica, sans-serif;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 0px 30px 0px #c6d1dc;
+        z-index: 10;
+        max-height: 140px;
+        overflow: auto;
+        div:first-child {
+          margin-top: 8px;
+        }
+        div:last-child {
+          margin-bottom: 8px;
+        }
+        div {
+          padding: 4px 14px 4px 0;
+        }
+        div:hover {
+          font-family: Assistant-bold, Arial, Helvetica, sans-serif;
+          background-color: rgb(197, 215, 255);
+        }
+      }
+    }
+  }
+}

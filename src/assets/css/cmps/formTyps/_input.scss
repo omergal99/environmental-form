@@ -1,0 +1,32 @@
+.form-levels {
+  .section {
+    .form-type-input {
+      width: 380px;
+      &.error-mode {
+        padding: 0;
+        .base-input {
+          border: 1px solid $clrErr;
+        }
+        .error-note {
+          display: block;
+        }
+      }
+      .error-note {
+        display: none;
+        font-family: Assistant-semiBold, Arial, Helvetica, sans-serif;
+        text-align: right;
+        padding: 0 8px 0px 0px;
+        font-size: 0.875rem;
+        height: 1rem;
+        color: $clrErr;
+      }
+    }
+    .form-type-text-area {
+      width: 100%;
+      .text-area {
+        font-family: Assistant, Arial, Helvetica, sans-serif;
+        height: 90px;
+      }
+    }
+  }
+}

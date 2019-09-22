@@ -1,0 +1,121 @@
+.form-levels {
+  .section {
+    .form-type-drop-down {
+      width: 100%;
+      .ingredient-title {
+        color: $clr1;
+        display: grid;
+        font-weight: 600;
+        grid-template-columns: 40% 21% 21% 16%;
+        .ing-name {
+          text-align: right;
+          padding: 0 42px 0 0;
+        }
+      }
+      .ingredient-items {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        margin: 8px 0 0;
+        .ingredient-item {
+          display: flex;
+          align-items: center;
+          background-color: white;
+          width: 100%;
+          height: 40px;
+          margin: 0 0 16px;
+          box-shadow: 0px 0px 30px 0px #c6d1dc;
+          .item-div {
+            display: grid;
+            font-weight: 600;
+            grid-template-columns: 0.7fr 0.4fr 0.4fr;
+            justify-content: unset;
+            width: 80%;
+            height: 36px;
+            span:first-child {
+              text-align: right;
+            }
+            span:not(:first-child) {
+              border-right: 1px solid #c7cdd3;
+            }
+            span {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              height: 36px;
+              line-height: 36px;
+            }
+          }
+          .remove-icon {
+            padding: 10px;
+          }
+          .wrap-precent {
+            font-family: Assistant, Arial, Helvetica, sans-serif;
+            position: relative;
+            width: 20%;
+            .base-input {
+              margin: 0;
+              width: 100%;
+              height: 40px;
+            }
+            .icon-percent {
+              position: absolute;
+              top: 8px;
+              right: 10px;
+            }
+            &.error-percent {
+              .base-input {
+                border: 1px solid $clrErr;
+              }
+              .error-note-precent {
+                display: block;
+              }
+            }
+            .error-note-precent {
+              display: none;
+              font-family: Assistant-semiBold, Arial, Helvetica, sans-serif;
+              font-size: 0.8rem;
+              color: #ff0048;
+              position: absolute;
+              top: 38px;
+              right: 6px;
+            }
+          }
+        }
+      }
+      .demo-options {
+        width: 100%;
+        .line-option {
+          padding: 4px 14px;
+          .name {
+            width: 53%;
+          }
+          .formula {
+            width: 27%;
+          }
+          .casNumber {
+            width: 20%;
+          }
+        }
+      }
+      &.error-mode {
+        padding: 0;
+        .base-input {
+          border: 1px solid $clrErr;
+        }
+        .error-note {
+          display: block;
+        }
+      }
+      .error-note {
+        display: none;
+        font-family: Assistant-semiBold, Arial, Helvetica, sans-serif;
+        text-align: right;
+        padding: 0 8px 0px 0px;
+        font-size: 0.875rem;
+        height: 1rem;
+        color: $clrErr;
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+.form-levels {
+  .section {
+    .form-type-base {
+      .base-title-icon {
+        height: 34px;
+        padding: 0 0 6px 0;
+        h4 {
+          margin: 0;
+          padding: 0 0 0 1rem;
+          text-align: right;
+        }
+        .question {
+          display: inline-flex;
+          position: relative;
+          p {
+            position: absolute;
+            visibility: hidden;
+            width: 280px;
+            height: auto;
+            text-align: right;
+            margin: 0;
+            z-index: 30;
+            top: 60px;
+            left: 30px;
+            box-shadow: 0px 0px 30px 0px #eef3f8;
+            background-color: white;
+            padding: 0.75rem;
+            font-size: 1rem;
+          }
+          &:hover p {
+            visibility: visible;
+          }
+        }
+      }
+    }
+  }
+}

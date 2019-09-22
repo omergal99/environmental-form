@@ -1,0 +1,41 @@
+.form-levels {
+  padding: 0 2rem 1.6rem;
+  h2 {
+    font-size: 1.625rem;
+    font-family: Assistant-bold, Arial, Helvetica, sans-serif;
+    text-align: right;
+  }
+  .buttons {
+    padding: 34px 0 0;
+    button {
+      width: 150px;
+      height: 60px;
+      font-size: 1.625rem;
+      font-family: Assistant-bold, Arial, Helvetica, sans-serif;
+      transition: all 0.2s;
+    }
+    .back {
+      color: #7d8795;
+      border: none;
+      background-color: #f3f4f5;
+      box-shadow: 0px 0px 15px 0px #c6d1dc;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 8px 10px 14px 12px;
+      img {
+        padding: 6px 0 0;
+      }
+    }
+    .next {
+      padding: 0 0 4px 0;
+      border: 2px solid $clr1;
+      color: white;
+      background-color: $clr1;
+      &:hover {
+        color: $clr1;
+        background-color: white;
+      }
+    }
+  }
+}

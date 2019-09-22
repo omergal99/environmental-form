@@ -1,0 +1,42 @@
+.form-levels {
+  .section {
+    .form-type-ratio {
+      width: 100%;
+      .MuiFormGroup-root {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .single-ratio {
+        margin: 0;
+        &:first-child {
+          padding: 0 0 0 65px;
+        }
+        span {
+          padding: 4px;
+        }
+        .MuiRadio-colorPrimary.Mui-checked {
+          color: $clr1;
+        }
+      }
+      &.error-mode {
+        padding: 0;
+        .MuiRadio-colorPrimary {
+          color: $clrErr;
+        }
+        .error-note {
+          display: block;
+        }
+      }
+      .error-note {
+        display: none;
+        font-family: Assistant-semiBold, Arial, Helvetica, sans-serif;
+        text-align: right;
+        padding: 0 8px 0px 0px;
+        font-size: 0.875rem;
+        height: 1rem;
+        color: $clrErr;
+      }
+    }
+  }
+}

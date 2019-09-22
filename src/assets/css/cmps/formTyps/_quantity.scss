@@ -1,0 +1,34 @@
+.form-levels {
+  .section {
+    .form-type-quantity {
+      width: 380px;
+      .base-input {
+        width: 255px;
+      }
+      .demo-select-small {
+        width: 95px;
+      }
+      .demo-options-small {
+        width: 95px;
+      }
+      &.error-mode {
+        padding: 0;
+        .base-input {
+          border: 1px solid $clrErr;
+        }
+        .error-note {
+          display: block;
+        }
+      }
+      .error-note {
+        display: none;
+        font-family: Assistant-semiBold, Arial, Helvetica, sans-serif;
+        text-align: right;
+        padding: 0 8px 0px 0px;
+        font-size: 0.875rem;
+        height: 1rem;
+        color: $clrErr;
+      }
+    }
+  }
+}
