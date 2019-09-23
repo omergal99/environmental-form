@@ -44,32 +44,35 @@ function Form() {
         let sec1 = { sections: sections1, title: 'פרטי החומרים' };
         let sec2 = { sections: sections2, title: 'פרטי המשלוח' };
         let levelsOrder = [levels[0], sec1, sec2];
-        return <FormFinal levels={levelsOrder} />
+        return <FormFinal levels={levelsOrder} onUpdateLevel={(num) => levelByArg(num)} />
       }
     } else return <div></div>
   }
 
+  const levelByArg = (num) => {
+    dispatch(actions.levelByArg(num));
+    window.scrollTo(0, 0);
+  }
   const levelUp = () => {
     if (currLevel < 3) {
       if (stateLevels) {
         const itErr = dispatch(actions.doesItError(stateLevels[currLevel - 1].sections));
         if (itErr) {
           setIsError(true);
+          window.scrollTo(0, 0);
         } else {
           setIsError(false);
-          dispatch(actions.updateLevels(stateLevels));
           dispatch(actions.levelUp());
           window.scrollTo(0, 0);
         }
       } else {
-        window.scrollTo(0, 0);
         setIsError(true);
+        window.scrollTo(0, 0);
       }
     }
   }
   const levelDown = () => {
     if (currLevel > 1) {
-      dispatch(actions.updateLevels(stateLevels));
       dispatch(actions.levelDown());
       window.scrollTo(0, 0);
     }

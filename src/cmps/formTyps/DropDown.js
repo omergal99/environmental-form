@@ -7,17 +7,19 @@ function DropDown({ field, onUpdateValue, isError }) {
   const [ingredients, setIngredients] = useState(field.value);
   const [isSelectOpen, setIsSelectOpen] = useState(false);
   const [isErr, setIsErr] = useState(false);
-  const [isErrPercent, setIsErrPercent] = useState([0,0,0,0,0,0,0,0,0,0,0,0]);
+  // const [percentErrors, setPercentErrors] = useState([5,5,5,5,5]);
+  const [percentErrors, setPercentErrors] = useState(Array(field.list.length).fill(1));
 
   const removeItem = idx => {
     const copyIngredients = [...ingredients];
     copyIngredients.splice(idx, 1);
     setIngredients(copyIngredients);
+    onUpdateValue(copyIngredients);
     (field.isMandatory && !copyIngredients.length) ? setIsErr(true) : setIsErr(false);
 
-    let errPre = isErrPercent;
+    let errPre = percentErrors;
     errPre.splice(idx, 1);
-    setIsErrPercent(errPre);
+    setPercentErrors(errPre);
   }
 
   const changeIngredients = newIng => {
@@ -25,10 +27,6 @@ function DropDown({ field, onUpdateValue, isError }) {
     setIngredients(updateIngredients);
     onUpdateValue(updateIngredients);
     setIsErr(false);
-
-    let errPre = isErrPercent;
-    errPre.push(newIng.percent);
-    setIsErrPercent(errPre);
   }
 
   const updateSearchValue = (ev) => {
@@ -38,19 +36,24 @@ function DropDown({ field, onUpdateValue, isError }) {
   }
 
   const updatePercent = (ev, idx) => {
-    const reg = new RegExp('^[0-9+-/]+$|^$')
+    const reg = new RegExp('^[0-9+-/]+$|^$');
     if (ev.target.value.length < 6 && reg.test(ev.target.value)) {
-      const copyPercent = [...ingredients];
-      copyPercent[idx]['percent'] = ev.target.value;
-      setIngredients(copyPercent);
+      const copyIngredients = [...ingredients];
+      copyIngredients[idx]['percent'] = ev.target.value;
+      setIngredients(copyIngredients);
+      onUpdateValue(copyIngredients);
 
-      let errPre = isErrPercent;
+      let errPre = percentErrors;
       errPre[idx] = ev.target.value;
-      setIsErrPercent(errPre);
+      setPercentErrors(errPre);
     }
   }
 
   const listIngredients = ingredients ? ingredients.map((ingredient, idx) => {
+    let isPerErr = percentErrors[idx];
+    if (isError) {
+      isPerErr = ingredient.percent;
+    }
     let isPercent = ingredient['percent'] ? ingredient.percent : '';
     return <div className="ingredient-item" key={idx}>
       <img className="remove-icon" onClick={() => removeItem(idx)} src="assets/img/icons/delete.png" alt="Delete" title="Delete" />
@@ -59,10 +62,10 @@ function DropDown({ field, onUpdateValue, isError }) {
         <span>{ingredient.molecularFormula}</span>
         <span>{ingredient.casNumber}</span>
       </div>
-      <span className={`wrap-precent ${!isErrPercent[idx] ? 'error-percent' : ''}`}>
+      <span className={`wrap-precent ${!isPerErr ? 'error-percent' : ''}`}>
         <input className="base-input" style={{ padding: isPercent ? '8px 24px 8px 10px' : '' }}
           type="text" value={isPercent} placeholder="אחוז מדוייק או טווח" required={field.isMandatory}
-          onChange={(ev) => updatePercent(ev, idx)} />
+          onChange={(ev) => updatePercent(ev, idx)} onBlur={(ev) => updatePercent(ev, idx)} />
         <span className="icon-percent">{isPercent ? '%' : ''}</span>
         <span className="error-note-precent">יש לרשום אחוז או טווח</span>
       </span>

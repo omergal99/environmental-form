@@ -3,16 +3,17 @@
     .form-type-quantity {
       width: 380px;
       .base-input {
-        width: 255px;
+        width: 67%;
       }
-      .demo-select-small {
-        width: 95px;
+      .demo-select {
+        width: 25%;
       }
-      .demo-options-small {
-        width: 95px;
+      .demo-options {
+        width: calc(25% - 0.9rem);
+        left: 1.8rem;
       }
       &.error-mode {
-        padding: 0;
+        padding-bottom: 0;
         .base-input {
           border: 1px solid $clrErr;
         }

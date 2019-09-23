@@ -9,7 +9,11 @@
     padding: 34px 0 0;
     button {
       width: 150px;
+      max-width: 33%;
+      min-width: 100px;
       height: 60px;
+      max-height: 14vw;
+      min-height: 50px;
       font-size: 1.625rem;
       font-family: Assistant-bold, Arial, Helvetica, sans-serif;
       transition: all 0.2s;

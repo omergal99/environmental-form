@@ -7,6 +7,7 @@ import UploadFile from './formTyps/UploadFile';
 import Quantity from './formTyps/Quantity';
 import DropDown from './formTyps/DropDown';
 import TextArea from './formTyps/TextArea';
+import InputNumbers from './formTyps/InputNumbers';
 
 function FormSection({ section, onUpdateSection, isError }) {
 
@@ -34,6 +35,9 @@ function FormSection({ section, onUpdateSection, isError }) {
     }
     if (field.type === 'textArea') {
       return <TextArea field={field} onUpdateValue={value => updateSection(value, idx)} isError={isError} key={idx} />
+    }
+    if (field.type === 'inputNumbers') {
+      return <InputNumbers field={field} onUpdateValue={value => updateSection(value, idx)} isError={isError} key={idx} />
     }
     return <Input field={field} onUpdateValue={value => updateSection(value, idx)} isError={isError} key={idx} />
   })

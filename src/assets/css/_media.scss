@@ -1,11 +1,146 @@
 /************************** Tablet and Desktop **************************/
 
+@media (min-width: 64px) and (max-width: 479px) {
+  .final-section {
+    padding: 0 1rem 1.5rem;
+  }
+  .approve-form {
+    padding: 0 1rem 1.5rem;
+  }
+}
+
+@media (max-width: 479px) {
+  .form-levels {
+    padding: 0 0 1.6rem;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+  .final-section {
+    padding: 0 1.6rem 1.5rem;
+  }
+  .approve-form {
+    padding: 0 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .final-section {
+    .final-fields {
+      flex-direction: column;
+      .final-field {
+        width: 100%;
+      }
+      .final-drop-field{
+        .ingredient-title {
+          grid-template-columns: none;
+          grid-template-rows: 1fr;
+          text-align: center;
+          padding: 0 0 0.75rem;
+          .ing-name {
+            text-align: center;
+            padding: 0;
+          }
+        }
+        .ingredient-items {
+          .ingredient-item {
+            height: auto;
+            flex-direction: column;
+            .item-div {
+              grid-template-columns: none;
+              grid-template-rows: 0.7fr 0.4fr 0.4fr;
+              height: auto;
+              width: 100%;
+              span:first-child {
+                text-align: center;
+                padding: 0;
+              }
+              span:not(:first-child) {
+                border-right: none;
+                position: relative;
+                &:after {
+                  content: "";
+                  height: 1px;
+                  width: 60%;
+                  position: absolute;
+                  right: calc((100% - 60%) / 2);
+                  background-color: #c7cdd3;
+                }
+              }
+            }
+            .wrap-precent {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  .form-levels {
+    .section {
+      .form-type-drop-down {
+        .ingredient-title {
+          grid-template-columns: none;
+          grid-template-rows: 1fr;
+          padding: 0 0 0.75rem;
+          .ing-name {
+            text-align: center;
+            padding: 0;
+          }
+        }
+        .ingredient-items {
+          .ingredient-item {
+            height: auto;
+            flex-direction: column;
+            .item-div {
+              grid-template-columns: none;
+              grid-template-rows: 0.7fr 0.4fr 0.4fr;
+              height: auto;
+              width: 100%;
+              span:first-child {
+                text-align: center;
+              }
+              span:not(:first-child) {
+                border-right: none;
+                position: relative;
+                &:after {
+                  content: "";
+                  height: 1px;
+                  width: 60%;
+                  position: absolute;
+                  right: calc((100% - 60%) / 2);
+                  background-color: #c7cdd3;
+                }
+              }
+            }
+            .wrap-precent {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .form-levels {
+    .section {
+      padding: 0 0 1.5rem;
+    }
+  }
+}
+
 @media (min-width: 768px) and (max-width: 1023px) {
-    // html{
-    //     font-size: 14px;
-    // }
 }
 
 @media (min-width: 1024px) {
-    
+  .form-levels {
+    .section {
+      .form-type-input,
+      .form-type-select {
+        max-width: 50%;
+      }
+    }
+  }
 }

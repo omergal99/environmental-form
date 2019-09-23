@@ -3,7 +3,7 @@
     .form-type-input {
       width: 380px;
       &.error-mode {
-        padding: 0;
+        padding-bottom: 0;
         .base-input {
           border: 1px solid $clrErr;
         }

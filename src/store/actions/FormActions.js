@@ -14,21 +14,19 @@ function updateDataFromAPI() {
   }
 }
 
-function updateLevels(stateLevels) {
-  return async (dispatch) => {
-    dispatch({ type: 'updateLevels', payload: stateLevels })
-  }
-}
-
 function doesItError(sections) {
   return () => {
     return FormService.doesItError(sections);
   }
 }
-
 function levelUp() {
   return async (dispatch) => {
     dispatch({ type: 'levelUp' })
+  }
+}
+function levelByArg(num) {
+  return async (dispatch) => {
+    dispatch({ type: 'levelByArg', payload: num })
   }
 }
 function levelDown() {
@@ -41,7 +39,7 @@ export default {
   loadFormData,
   levelUp,
   levelDown,
-  updateLevels,
   doesItError,
-  updateDataFromAPI
+  updateDataFromAPI,
+  levelByArg
 }

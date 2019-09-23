@@ -24,11 +24,11 @@ const initialState = {
               validation: '',
               placeholder: 'בחר/י מקור',
               value: '',
-              list: [{ id: 1, title: "4444ישראל" }, { id: 2, title: "3333ישראל" }]
+              list: [{ id: 1, title: "ישראל" }, { id: 2, title: "חוץ לארץ" }]
             },
             {
               name: 'מספר ח"פ',
-              type: '',
+              type: 'inputNumbers',
               isMandatory: 'נא להוסיף לספר ח"פ',
               validation: '',
               placeholder: '',
@@ -59,7 +59,7 @@ const initialState = {
             },
             {
               name: 'ת"ז',
-              type: '',
+              type: 'inputNumbers',
               isMandatory: 'יש לרשום את מספר תעודת הזהות',
               validation: '',
               placeholder: '',
@@ -77,7 +77,7 @@ const initialState = {
             },
             {
               name: 'מספר טלפון נייד',
-              type: '',
+              type: 'inputNumbers',
               isMandatory: 'יש לרשום טלפון נייד',
               validation: '',
               placeholder: '',
@@ -85,7 +85,7 @@ const initialState = {
             },
             {
               name: 'מספר טלפון נוסף',
-              type: '',
+              type: 'inputNumbers',
               isMandatory: '',
               validation: '',
               placeholder: '',
@@ -93,7 +93,7 @@ const initialState = {
             },
             {
               name: 'מספר פקס',
-              type: '',
+              type: 'inputNumbers',
               isMandatory: '',
               validation: '',
               placeholder: '',
@@ -115,7 +115,7 @@ const initialState = {
             },
             {
               name: 'מספר עמיל המכס',
-              type: '',
+              type: 'inputNumbers',
               isMandatory: 'יש למלא את מספר עמיל המכס',
               validation: '',
               placeholder: '',
@@ -123,7 +123,7 @@ const initialState = {
             },
             {
               name: 'מספר טלפון',
-              type: '',
+              type: 'inputNumbers',
               isMandatory: 'יש להזין מספר טלפון',
               validation: '',
               placeholder: '',
@@ -172,7 +172,7 @@ const initialState = {
               validation: '',
               placeholder: 'בחר/י קטגוריה',
               value: '',
-              list: [{ id: 1, title: "11111" }, { id: 2, title: "22222" }]
+              list: [{ id: 1, title: "חקלאות" }, { id: 2, title: "בריאות" }]
             },
             {
               name: 'ייעוד הפריט',
@@ -279,7 +279,7 @@ const initialState = {
               validation: '',
               placeholder: 'בחר/י מעבר',
               value: '',
-              list: [{ id: 1, title: "11111" }, { id: 2, title: "22222" }]
+              list: [{ id: 1, title: "טול כרם" }, { id: 2, title: "שער אפריים" }]
             },
             {
               name: 'ערך כספי של הסחורה',
@@ -301,7 +301,7 @@ const initialState = {
             },
             {
               name: 'ת"ז הנהג',
-              type: '',
+              type: 'inputNumbers',
               isMandatory: 'יש למלא תעודת זהות של הנהג',
               validation: '',
               placeholder: '',

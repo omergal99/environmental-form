@@ -43,7 +43,9 @@ function FormFinalFields({ fields }) {
         {(field.secondName || field.secondName === '') ? field.secondName : field.name}
         <span>{(field.secondName === '') ? '' : ':'}</span>
       </span>
-      <span className="value" style={{ display: isDrop ? 'block' : '', width: isDrop ? '100%' : '', padding: isDrop ? '0' : '' }}>
+      <span className="value" style={{
+        display: isDrop ? 'block' : '', width: isDrop || field.type === 'textArea' ? '100%' : '', padding: isDrop ? '0' : '',
+      }}>
         {isDrop &&
           <div className="ingredient-title">
             <span className="ing-name">שם המרכיב</span>

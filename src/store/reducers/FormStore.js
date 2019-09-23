@@ -18,6 +18,10 @@ export default (state = initialState, action) => {
       copy = JSON.parse(JSON.stringify(state));
       copy.levels = action.payload;
       return copy;
+    case 'levelByArg':
+      copy = JSON.parse(JSON.stringify(state));
+      copy.currLevel = action.payload;
+      return copy;
     case 'levelUp':
       copy = JSON.parse(JSON.stringify(state));
       copy.currLevel++;
