@@ -35,7 +35,8 @@ function FormFinalFields({ fields }) {
       value = value.quantity;
     }
     if (field.type === 'uploadFile') {
-      value.map(item => <span>{item}</span>)
+      value = value.map(item => <span key={item.name}>{item.name}</span>)
+
     }
 
     return <div className={`final-field ${isDrop ? 'final-drop-field' : ''}`} key={idx}>

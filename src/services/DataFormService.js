@@ -1,6 +1,6 @@
 const initialState = {
   reachedLevel: 1,
-  currLevel: 1,
+  currLevel: 3,
   levels: [
     {
       title: 'פרטי המבקש',

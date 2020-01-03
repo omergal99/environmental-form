@@ -20,7 +20,7 @@ function TextArea({ field, onUpdateValue, isError }) {
   return (
     <div className={`form-type-base form-type-text-area ${errClass ? 'error-mode' : ''}`}>
       <TitleRepeat field={field} />
-      <textarea className="base-input text-area" onChange={updateValue} onBlur={sendvalue}>
+      <textarea className="base-input text-area" value={value} onChange={updateValue} onBlur={sendvalue}>
         {value}
       </textarea>
       <span className="error-note">{field.isMandatory}</span>
