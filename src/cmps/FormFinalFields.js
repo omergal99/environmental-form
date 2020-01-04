@@ -35,7 +35,9 @@ function FormFinalFields({ fields }) {
       value = value.quantity;
     }
     if (field.type === 'uploadFile') {
-      value = value.map(item => <span key={item.name}>{item.name}</span>)
+      value = value.map((item, idx) => <span key={item.name}
+        style={{ overflow: 'auto', display: 'block', direction: 'ltr', textAlign: 'left', padding: '0 0 0 8px' }}
+      >{idx + 1}) {item.name}</span>)
 
     }
 
